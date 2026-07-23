@@ -1,0 +1,19 @@
+{
+  "name": "character-ai-proyect",
+  "version": "1.0.0",
+  "description": "SPA para conversar con tres personajes utilizando Google Gemini AI mediante Vercel Functions.",
+  "type": "module",
+  "scripts": {
+    "serve": "vercel dev --listen 127.0.0.1:3002 --local",
+    "dev": "npm run serve",
+    "start": "npm run serve",
+    "test": "vitest",
+    "test:watch": "vitest --watch"
+  },
+  "dependencies": {
+    "@google/genai": "^1.17.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

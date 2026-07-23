@@ -1,0 +1,1189 @@
+/* ==========================
+   VARIABLES
+========================== */
+
+:root{
+
+    --bg:#1a2130;
+
+    --surface:#222b3d;
+
+    --surface-2:#2a3448;
+
+    --border:#3a465f;
+
+
+    --text:#eef1f6;
+
+    --text-light:#9aa5b8;
+
+
+    --nova:#b6609e;
+
+    --ash:#e8833a;
+
+    --sabia:#4fa89b;
+
+
+    --accent:var(--nova);
+
+}
+
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+
+
+/* ==========================
+   APP
+========================== */
+
+.app{
+
+    max-width:900px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+/* ==========================
+   NAVEGACIÓN
+========================== */
+
+header{
+
+    background:var(--surface);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+
+.navigation{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:15px;
+
+}
+
+
+
+.navigation button{
+
+    background:none;
+
+    border:none;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+
+
+.navigation button:hover{
+
+    color:var(--accent);
+
+}
+
+
+
+/* ==========================
+   CONTENIDO
+========================== */
+
+#app{
+
+    flex:1;
+
+    padding:20px;
+
+}
+
+
+
+/* ==========================
+   HOME
+========================== */
+
+.home{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:20px;
+
+    min-height:70vh;
+
+}
+
+
+
+.home h1{
+
+    font-size:2rem;
+
+}
+
+
+
+.home p{
+
+    color:var(--text-light);
+
+    max-width:600px;
+
+}
+
+
+
+.home button{
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--accent);
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ==========================
+   CHAT
+========================== */
+
+.chat{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:75vh;
+
+}
+
+
+
+.messages{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* ==========================
+   MENSAJES
+========================== */
+
+.message{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px 15px;
+
+    border-radius:15px;
+
+    max-width:80%;
+
+    line-height:1.5;
+
+}
+
+
+
+.message span{
+
+    display:block;
+
+}
+
+
+
+.user{
+
+    align-self:flex-end;
+
+    background:var(--surface-2);
+
+}
+
+
+
+.ai{
+
+    align-self:flex-start;
+
+    background:rgba(182,96,158,.15);
+
+    border-left:4px solid var(--accent);
+
+}
+
+
+
+/* ==========================
+   AVATAR PERSONAJE
+========================== */
+
+.message-avatar{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    border:2px solid var(--border);
+
+    flex-shrink:0;
+
+    transition:.3s;
+
+}
+
+
+
+.message-avatar:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+/* ==========================
+   INPUT
+========================== */
+
+.input-area{
+
+    display:flex;
+
+    gap:12px;
+
+    padding-top:15px;
+
+}
+
+
+
+.input-area input{
+
+    flex:1;
+
+    padding:14px 18px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+
+
+.input-area input:focus{
+
+    border-color:var(--accent);
+
+    box-shadow:
+    0 0 10px rgba(182,96,158,.4);
+
+}
+
+
+
+.input-area button{
+
+    padding:0 22px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:var(--accent);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.input-area button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* ==========================
+   TYPING
+========================== */
+
+.typing{
+
+    color:var(--text-light);
+
+    font-style:italic;
+
+}
+
+
+
+/* ==========================
+   ABOUT
+========================== */
+
+.about{
+
+    line-height:1.8;
+
+}
+
+
+
+.about h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* ==========================
+   MODAL PERSONAJE
+========================== */
+
+.character-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+
+
+.character-modal.show{
+
+    display:flex;
+
+}
+
+
+
+.character-card{
+
+    background:var(--surface);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    width:320px;
+
+}
+
+
+
+.character-card img{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.close-modal{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* ==========================
+   RESPONSIVE TABLET
+========================== */
+
+@media(max-width:768px){
+
+
+    .navigation{
+
+        flex-wrap:wrap;
+
+    }
+
+
+    .message{
+
+        max-width:90%;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+   RESPONSIVE MOBILE
+========================== */
+
+@media(max-width:480px){
+
+
+    .navigation{
+
+        flex-direction:column;
+
+        gap:8px;
+
+    }
+
+
+
+    .input-area{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .input-area button{
+
+        width:100%;
+
+        height:45px;
+
+    }
+
+
+
+    .message{
+
+        max-width:100%;
+
+    }
+
+
+}
+/* ==========================
+   GALERÍA DE PERSONAJES
+========================== */
+
+.character-list{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+    margin-top:40px;
+
+}
+
+.character-preview{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    max-width:180px;
+
+}
+
+.character-preview img{
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid var(--border);
+
+    cursor:pointer;
+
+    transition:all .35s ease;
+
+}
+
+/* Hover */
+
+.character-preview img:hover{
+
+    transform:scale(1.12);
+
+}
+
+/* Color según personaje */
+
+.character-preview:nth-child(1) img:hover{
+
+    border-color:var(--nova);
+
+    box-shadow:
+        0 0 25px rgba(182,96,158,.65);
+
+}
+
+.character-preview:nth-child(2) img:hover{
+
+    border-color:var(--ash);
+
+    box-shadow:
+        0 0 25px rgba(232,131,58,.65);
+
+}
+
+.character-preview:nth-child(3) img:hover{
+
+    border-color:var(--sabia);
+
+    box-shadow:
+        0 0 25px rgba(79,168,155,.65);
+
+}
+
+.character-preview h2{
+
+    margin-top:18px;
+
+    font-size:1.2rem;
+
+}
+
+.character-preview p{
+
+    margin-top:8px;
+
+    color:var(--text-light);
+
+    font-size:.9rem;
+
+    min-height:45px;
+
+}
+
+.character-preview button{
+
+    margin-top:15px;
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--accent);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.character-preview button:hover{
+
+    transform:scale(1.05);
+
+}
+
+.chat-characters {
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+
+}
+
+
+.chat-character {
+
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+
+.chat-character img {
+
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+
+}
+
+
+.chat-character span {
+
+    display:block;
+    margin-top:8px;
+
+}
+
+/* =========================
+   SELECTOR DE PERSONAJES CHAT
+========================= */
+
+.chat-characters {
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+
+}
+
+
+.chat-character {
+
+    position: relative;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+
+.chat-character img {
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+
+}
+
+
+
+/* Animación al pasar el mouse */
+
+.chat-character:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.chat-character:hover img {
+
+    transform: scale(1.15);
+
+    filter: brightness(1.15);
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.8),
+        0 0 30px rgba(255,215,100,0.8);
+
+}
+
+
+
+/* Nombre */
+
+.chat-character span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 1rem;
+
+}
+
+
+
+/* Estrellitas */
+
+.chat-character::before,
+.chat-character::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    opacity: 0;
+
+    font-size: 22px;
+
+    color: #ffd86b;
+
+    transition: opacity 0.3s ease;
+
+}
+
+
+
+.chat-character::before {
+
+    top: -10px;
+    left: 5px;
+
+}
+
+
+
+.chat-character::after {
+
+    bottom: 25px;
+    right: 0;
+
+}
+
+
+
+.chat-character:hover::before,
+.chat-character:hover::after {
+
+    opacity: 1;
+
+    animation: sparkle 0.8s infinite alternate;
+
+}
+
+
+
+@keyframes sparkle {
+
+
+    from {
+
+        transform: scale(0.8) rotate(0deg);
+
+        opacity: 0.5;
+
+    }
+
+
+    to {
+
+        transform: scale(1.3) rotate(20deg);
+
+        opacity: 1;
+
+    }
+
+
+}
+
+/* =========================
+   NOMBRES DE PERSONAJES
+========================= */
+
+.chat-character span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: white;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.8),
+        0 0 10px rgba(255,255,255,0.5);
+
+    transition:
+        transform 0.3s ease,
+        text-shadow 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+
+/* Brillo al seleccionar */
+
+.chat-character:hover span {
+
+    transform: scale(1.15);
+
+    color: #ffffff;
+
+    text-shadow:
+
+        0 0 8px #ffffff,
+
+        0 0 18px #ffd86b,
+
+        0 0 30px #ffd86b;
+
+}
+
+
+
+/* Fuente estilo más fantasía */
+
+.chat-character span {
+
+    font-family:
+        "Segoe UI",
+        "Trebuchet MS",
+        sans-serif;
+
+}
+
+/* =========================
+   CHAT - MENSAJES
+========================= */
+
+
+#messages {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+}
+
+
+
+/* Mensaje general */
+
+.message {
+
+    max-width: 75%;
+
+    padding: 12px 16px;
+
+    border-radius: 18px;
+
+    line-height: 1.5;
+
+    animation: messageAppear 0.3s ease;
+
+}
+
+
+
+/* Mensaje del usuario */
+
+.message.user {
+
+    align-self: flex-end;
+
+    background: #333;
+
+    color: white;
+
+    border-bottom-right-radius: 5px;
+
+}
+
+
+
+/* Mensaje de la IA */
+
+.message.ai {
+
+    align-self: flex-start;
+
+    background: #222;
+
+    color: white;
+
+    border-bottom-left-radius: 5px;
+
+}
+
+
+
+/* Avatar de la IA */
+
+.message.ai img {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-right: 10px;
+
+    vertical-align: middle;
+
+}
+
+
+
+/* Separación entre avatar y texto */
+
+.message.ai {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+
+/* Animación */
+
+@keyframes messageAppear {
+
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+
+}
+
+.input-area {
+
+    display:flex;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+
+}
+
+.message em{
+
+    font-style: italic;
+
+    color: #ffd86b;
+
+}
+
+.message strong{
+
+    font-weight: bold;
+
+}
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    line-height: 1.8;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.about h3 {
+    margin-top: 2rem;
+    color: var(--nova);
+}
+
+.about p {
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+.about ul {
+    margin-left: 1.5rem;
+    margin-top: 0.8rem;
+}
+
+.about li {
+    margin-bottom: 0.7rem;
+}
+
+.about-character-image{
+
+    width: 130px;
+
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+    margin: 1rem auto;
+
+}

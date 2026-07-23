@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres Mentes - Chat IA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header>
+
+            <nav class="navigation">
+
+                <button data-route="/home">Inicio</button>
+
+                <button data-route="/chat">Chat</button>
+
+                <button data-route="/about">Acerca de</button>
+
+            </nav>
+
+        </header>
+
+        <!-- Aquí se renderizan las vistas -->
+        <main id="app"></main>
+
+    </div>
+
+    <!-- Modal del personaje -->
+    <div class="character-modal" id="characterModal">
+
+        <div class="character-card">
+
+            <button class="close-modal" id="closeModal">
+                ✕
+            </button>
+
+            <img id="modalImg" src="" alt="">
+
+            <h2 id="modalName"></h2>
+
+            <p id="modalDescription"></p>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./app.js"></script>
+
+</body>
+
+</html>
