@@ -149,33 +149,34 @@ export default async function handler(req, res) {
 
         ];
 
+const result = await ai.models.generateContent({
 
+    model: "gemini-2.5-flash",
 
+    contents,
 
+    config: {
 
-        const result = await ai.models.generateContent({
+        systemInstruction:
+            selectedCharacter.prompt +
+            `
+            
+            Reglas de respuesta:
+            - Responde de forma breve y clara.
+            - Evita explicaciones demasiado largas.
+            - Usa máximo 3 párrafos.
+            - Mantén las respuestas entre 50 y 120 palabras.
+            - Habla como un personaje de conversación.
+            
+            `,
 
+        temperature: 0.7,
 
-            model: "gemini-2.5-flash",
+        maxOutputTokens: 200,
 
+    },
 
-            contents,
-
-
-            config: {
-
-
-                systemInstruction:
-                    selectedCharacter.prompt,
-
-
-                temperature: 0.7,
-
-
-            },
-
-
-        });
+});
 
 
 
