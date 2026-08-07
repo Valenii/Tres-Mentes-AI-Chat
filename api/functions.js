@@ -151,7 +151,7 @@ export default async function handler(req, res) {
 
 const result = await ai.models.generateContent({
 
-   model: "gemini-2.5-flash-lite",
+   model: "gemini-2.5-flash",
 
     contents,
 
@@ -165,7 +165,7 @@ const result = await ai.models.generateContent({
             - Responde de forma breve y clara.
             - Evita explicaciones demasiado largas.
             - Usa máximo 3 párrafos.
-            - Mantén las respuestas entre 50 y 120 palabras.
+            - Mantén las respuestas en 70 palabras.
             - Habla como un personaje de conversación.
             
             `,
