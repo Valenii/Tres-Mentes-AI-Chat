@@ -159,16 +159,17 @@ model: "gemini-3.5-flash-lite",
 
         systemInstruction:
             selectedCharacter.prompt +
-            `
-            
-            Reglas de respuesta:
-            - Responde de forma breve y clara.
-            - Evita explicaciones demasiado largas.
-            - Usa máximo 3 párrafos.
-            - Mantén las respuestas en 70 palabras.
-            - Habla como un personaje de conversación.
-            
-            `,
+          `
+    
+    Reglas obligatorias de respuesta:
+    - Responde siempre de forma breve.
+    - No des explicaciones largas ni desarrolles demasiado las ideas.
+    - Máximo 50 palabras por respuesta.
+    - Sé directo y natural.
+    - Habla como un personaje de conversación, no como un asistente.
+    - No repitas información innecesaria.
+
+    `,
 
         temperature: 0.7,
 
