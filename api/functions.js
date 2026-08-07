@@ -198,29 +198,14 @@ const result = await ai.models.generateContent({
 
     } catch(error) {
 
+    console.error("===== ERROR COMPLETO =====");
+    console.error(JSON.stringify(error, null, 2));
 
-        console.error(
-            "Error Gemini:",
-            error
-        );
+    return res.status(500).json({
+        error: "Error al conectar con Gemini",
+        details: error.message,
+    });
 
-
-
-        return res.status(500).json({
-
-
-            error:
-                "Error al conectar con Gemini",
-
-
-            details:
-                error.message,
-
-
-        });
-
-
-    }
-
+}
 
 }
