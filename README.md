@@ -1,5 +1,12 @@
 #  Tres Mentes - AI Chat
 
+**Repositorio:**  
+https://github.com/Valenii/Tres-Mentes-AI-Chat
+
+**Aplicación desplegada:**  
+https://tres-mentes-ai.vercel.app/
+
+
 ## Descripción
 
 **Tres Mentes** es una Single Page Application (SPA) desarrollada con HTML, CSS y JavaScript que permite conversar con tres personajes ficticios utilizando Google Gemini AI.
@@ -100,7 +107,7 @@ Character_AI_Proyect/
 Clonar el repositorio:
 
 ```bash
-git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+git clone https://github.com/Valenii/Tres-Mentes-AI-Chat.git
 ```
 
 Entrar al proyecto:
@@ -150,7 +157,7 @@ http://localhost:3000
 ```bash
 npm test
 ```
-
+Los tests fueron desarrollados utilizando Vitest para verificar el funcionamiento de las funciones principales del proyecto.
 ---
 
 #  Despliegue en Vercel
@@ -160,13 +167,34 @@ npm test
 3. Importar el repositorio.
 4. Configurar la variable de entorno:
 
+
+
 ```
 GEMINI_API_KEY
 ```
 
 5. Desplegar la aplicación.
 
+Cada vez que se realiza un **git push** al repositorio, Vercel genera automáticamente un nuevo deployment.
+
+La versión publicada puede visualizarse en:
+
+https://tres-mentes-ai.vercel.app/
+
 ---
+
+# Funcionalidades
+
+- Single Page Application (SPA).
+- Navegación entre Inicio, Chat y Acerca de.
+- Tres personajes con personalidades únicas mediante System Prompts.
+- Integración con Google Gemini AI.
+- Comunicación segura utilizando Vercel Serverless Functions.
+- Diseño responsive para dispositivos móviles y escritorio.
+- Pruebas unitarias desarrolladas con Vitest.
+
+---
+
 
 # Uso de Inteligencia Artificial
 
@@ -212,6 +240,12 @@ Las decisiones finales sobre la implementación, organización del código y ada
 ![Chat con Mime](./screenshots/captura7.png)
 
 ---
+
+# Notas adicionales
+
+La API Key de Google Gemini nunca se expone en el navegador.
+
+Todas las solicitudes pasan por una Vercel Serverless Function, que utiliza variables de entorno para comunicarse de forma segura con la API de Gemini.
 
 #  Autora
 
